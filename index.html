@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Quiz - Check Your Answers</title>
+    <script type="importmap">
+        {
+          "imports": {
+            "@google/generative-ai": "https://esm.run/@google/generative-ai"
+          }
+        }
+    </script>
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e9ecef; /* Light gray background */
+    margin: 0;
+    padding: 0;
+}
+
+#questions-container {
+    background-color: #ffffff; /* White background for question container */
+    padding: 30px;
+    margin: 50px auto;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    border: 2px solid #6c757d; /* Gray border for container */
+}
+
+h1 {
+    font-size: 2rem;
+    color: #495057; /* Dark gray */
+    margin-bottom: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 120px;
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 2px solid #007bff; /* Blue border */
+    margin-bottom: 20px;
+    transition: border-color 0.3s;
+}
+
+textarea:focus {
+    border-color: #0056b3; /* Dark blue when focused */
+    outline: none;
+}
+
+button {
+    background-color: #007bff; /* Primary blue */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3; /* Dark blue on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+#result {
+    background-color: #28a745; /* Success green */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+#submit,
+#next-btn,
+#submit-quiz {
+    display: block;
+    margin: 10px auto;
+    width: 50%;
+}
+
+#submit-quiz {
+    background-color: #ffc107; /* Warning yellow */
+}
+
+#submit-quiz:hover {
+    background-color: #e0a800; /* Darker yellow on hover */
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1rem;
+    color: #6c757d; /* Gray */
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    #questions-container {
+        width: 80%;
+    }
+
+    button {
+        width: 70%;
+    }
+}
+
+@media (max-width: 500px) {
+    #questions-container {
+        width: 90%;
+    }
+
+    button {
+        width: 90%;
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <div id="questions-container">
+    </div>
+    <button id="next-btn" style="display: none;">Next Question</button>
+    <button id="submit">Submit Answer</button>
+    <button id="submit-quiz" style="display: none;">Submit Quiz</button>
+    <div id="result"></div>
+
+    <footer>
+        <p>AI-Powered Quiz | Developed by Vanshika</p>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>
